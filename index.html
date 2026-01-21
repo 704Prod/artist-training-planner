@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artist Training Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="left">
+      <div class="title">Artist Training Planner</div>
+      <div class="sub">Division-mapped checklist + session plan generator</div>
+    </div>
+    <div class="right">
+      <a class="back" href="PASTE_TOOLS_HUB_URL_HERE">← Back to Tools Hub</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="row">
+        <div class="field">
+          <label>Division</label>
+          <select id="division">
+            <option>All</option>
+            <option>Entertainment</option>
+            <option>APS</option>
+            <option>VPS</option>
+            <option>BIS</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Training Area</label>
+          <select id="area">
+            <option value="All">All</option>
+            <option value="Performance">Performance Skills</option>
+            <option value="Brand">Image & Brand</option>
+            <option value="Production">Music Production & Songwriting</option>
+            <option value="Marketing">Marketing & Promotion</option>
+            <option value="Business">Business & Career Management</option>
+            <option value="Conduct">Professional Conduct & Growth</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Artist</label>
+          <input id="artist" placeholder="e.g., Kyla Harmony" />
+        </div>
+
+        <div class="field">
+          <label>Session Date</label>
+          <input id="date" type="date" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field grow">
+          <label>Notes (optional)</label>
+          <input id="notes" placeholder="Focus points, upcoming show, release, weaknesses, etc." />
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="gen" class="btn primary">Generate</button>
+        <button id="copyChecklist" class="btn">Copy Checklist</button>
+        <button id="copyPlan" class="btn">Copy Session Plan</button>
+        <button id="reset" class="btn danger">Reset Progress</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panelHead">
+        <div>
+          <div class="h">Checklist</div>
+          <div class="muted" id="summary"></div>
+        </div>
+      </div>
+
+      <div id="list" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panelHead">
+        <div>
+          <div class="h">Session Plan (copy/paste)</div>
+          <div class="muted">Use this for notes, docs, or sending to the team.</div>
+        </div>
+      </div>
+      <pre id="plan" class="pre"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
